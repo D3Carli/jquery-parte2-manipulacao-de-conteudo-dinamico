@@ -107,7 +107,7 @@
         var novaQuantidade = atual - 1;
         $("#qtde-itens").text(novaQuantidade);
         var self = $(this);
-        self.parent().parent().remove();
+        self.closest("tr").remove();
       }
       var aposInicializacao = function() {
         var itens = $(".item-total");
