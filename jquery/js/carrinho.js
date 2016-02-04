@@ -17,6 +17,7 @@ var removeitem = function(event) {
   atualizaDados();
 };
 var undo = function() {
+  $('tr:visible').removeClass("recuperado");
   $('tr:hidden').addClass("recuperado").show();
 };
 var aposInicializacao = function() {
