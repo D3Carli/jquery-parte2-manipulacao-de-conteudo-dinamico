@@ -13,11 +13,15 @@ var atualizaDados = function() {
 var removeitem = function(event) {
   event.preventDefault();
   var self = $(this);
-  self.closest("tr").remove();
+  self.closest("tr").hide();
   atualizaDados();
 };
+var undo = function() {
+  $('tr:hidden').show();
+};
 var aposInicializacao = function() {
-  atualizaDados();
   $('.remove-item').click(removeitem);
+  $('#undo').click(undo);
+  atualizaDados();
 };
 $(aposInicializacao);
