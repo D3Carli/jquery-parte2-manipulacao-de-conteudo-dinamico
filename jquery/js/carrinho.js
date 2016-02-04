@@ -1,5 +1,5 @@
 var atualizaDados = function() {
-  var itens = $(".item-total");
+  var itens = $(".item-total:visible");
   var total = 0;
   var size = itens.length;
   for (var i = 0, h; i < size; i++) {
@@ -19,6 +19,7 @@ var removeitem = function(event) {
 var undo = function() {
   $('tr:visible').removeClass("recuperado");
   $('tr:hidden').addClass("recuperado").show();
+  atualizaDados();
 };
 var aposInicializacao = function() {
   $('.remove-item').click(removeitem);
