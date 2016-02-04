@@ -100,16 +100,7 @@
     </div>
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
-      var removeitem = function(event) {
-        event.preventDefault();
-        var quantidadeComoString = $("#qtde-itens").text();
-        var atual = parseInt(quantidadeComoString);
-        var novaQuantidade = atual - 1;
-        $("#qtde-itens").text(novaQuantidade);
-        var self = $(this);
-        self.closest("tr").remove();
-      }
-      var aposInicializacao = function() {
+      var atualizaDados = function() {
         var itens = $(".item-total");
         var total = 0;
         var size = itens.length;
@@ -120,6 +111,15 @@
         }
         $("#valor-total").text(total);
         $("#qtde-itens").text(size);
+      }
+      var removeitem = function(event) {
+        event.preventDefault();
+        var self = $(this);
+        self.closest("tr").remove();
+        atualizaDados();
+      }
+      var aposInicializacao = function() {
+        atualizaDados();
         $('.remove-item').click(removeitem);
       }
       $(aposInicializacao);
