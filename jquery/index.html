@@ -100,7 +100,12 @@
     </div>
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
-      var removeitem = function() {console.log("Cliquei");}
+      var removeitem = function() {
+        var quantidadeComoString = $("#quantidade-de-itens").text();
+        var atual = parseInt(quantidadeComoString);
+        var novaQuantidade = atual - 1;
+        $("#quantidade-de-itens").text(novaQuantidade);
+      }
       var aposInicializacao = function() {
         var itens = $(".item-total");
         var total = 0;
