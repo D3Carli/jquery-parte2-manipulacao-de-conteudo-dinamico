@@ -7,8 +7,8 @@ var atualizaDados = function() {
     var valor = parseFloat(item.text());
     total += valor;
   }
-  $("#valor-total").text(total);
-  $("#qtde-itens").text(size);
+  $(".valor-total").text(total);
+  $(".qtde-itens").text(size);
 };
 var removeitem = function(event) {
   event.preventDefault();
@@ -17,13 +17,14 @@ var removeitem = function(event) {
   atualizaDados();
 };
 var undo = function() {
-  $('tr:visible').removeClass("recuperado");
-  $('tr:hidden').addClass("recuperado").show();
+  var carrinho = $(this).closest(".carrinho");
+  carrinho.find('tr:visible').removeClass("recuperado");
+  carrinho.find('tr:hidden').addClass("recuperado").show();
   atualizaDados();
 };
 var aposInicializacao = function() {
   $('.remove-item').click(removeitem);
-  $('#undo').click(undo);
+  $('.undo').click(undo);
   atualizaDados();
 };
 $(aposInicializacao);
