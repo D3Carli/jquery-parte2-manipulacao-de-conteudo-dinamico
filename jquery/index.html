@@ -100,11 +100,14 @@
     </div>
     <script src="js/jquery.js"></script>
     <script type="text/javascript">
-      var removeitem = function() {
-        var quantidadeComoString = $("#quantidade-de-itens").text();
+      var removeitem = function(event) {
+        event.preventDefault();
+        var quantidadeComoString = $("#qtde-itens").text();
         var atual = parseInt(quantidadeComoString);
         var novaQuantidade = atual - 1;
-        $("#quantidade-de-itens").text(novaQuantidade);
+        $("#qtde-itens").text(novaQuantidade);
+        var self = $(this);
+        self.parent().parent().remove();
       }
       var aposInicializacao = function() {
         var itens = $(".item-total");
@@ -117,9 +120,7 @@
         }
         $("#valor-total").text(total);
         $("#qtde-itens").text(size);
-        $('.remove-item').click(function() {
-          removeitem();
-        });
+        $('.remove-item').click(removeitem);
       }
       $(aposInicializacao);
     </script>
