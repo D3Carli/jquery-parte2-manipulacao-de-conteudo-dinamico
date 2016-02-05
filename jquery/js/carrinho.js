@@ -49,6 +49,10 @@ var escondePropagandas = function(event) {
   event.preventDefault();
   $(".propaganda").hide();
 };
+var mostraPropagandas = function(event) {
+  event.preventDefault();
+  $(".propaganda").show();
+};
 var aposInicializacao = function() {
   $('.remove-item').click(removeitem);
   $('.undo').click(undo);
@@ -60,6 +64,7 @@ var aposInicializacao = function() {
   });
   $('tbody tr').hover(daDestaque, tiraDestaque);
   $("#esconde-propagandas").click(escondePropagandas);
+  $("#mostra-propagandas").click(mostraPropagandas);
   atualizaDados();
 };
 $(aposInicializacao);
