@@ -40,9 +40,11 @@ var undo = function() {
   atualizaDados();
 };
 var daDestaque = function() {
+  $(this).find(".remove-item").fadeIn();
   $(this).addClass("hovering");
 };
 var tiraDestaque = function() {
+  $(this).find(".remove-item").fadeOut();
   $(this).removeClass("hovering");
 };
 var alternaPropaganda = function(event) {
