@@ -39,6 +39,9 @@ var undo = function() {
   carrinho.find('tr:hidden').addClass("recuperado").show();
   atualizaDados();
 };
+var daDestaque = function() {
+  $(this).css("background", "#CCC");
+};
 var aposInicializacao = function() {
   $('.remove-item').click(removeitem);
   $('.undo').click(undo);
@@ -48,6 +51,7 @@ var aposInicializacao = function() {
       umaPropaganda().insertAfter($(this));
     });
   });
+  $('tr').hover(daDestaque);
   atualizaDados();
 };
 $(aposInicializacao);
