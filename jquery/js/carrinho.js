@@ -45,6 +45,10 @@ var daDestaque = function() {
 var tiraDestaque = function() {
   $(this).removeClass("hovering");
 };
+var escondePropagandas = function(event) {
+  event.preventDefault();
+  $(".propaganda").hide();
+};
 var aposInicializacao = function() {
   $('.remove-item').click(removeitem);
   $('.undo').click(undo);
@@ -55,6 +59,7 @@ var aposInicializacao = function() {
     });
   });
   $('tbody tr').hover(daDestaque, tiraDestaque);
+  $("#esconde-propagandas").click(escondePropagandas);
   atualizaDados();
 };
 $(aposInicializacao);
