@@ -47,11 +47,11 @@ var tiraDestaque = function() {
 };
 var escondePropagandas = function(event) {
   event.preventDefault();
-  $(".propaganda").hide();
+  $(".propaganda").fadeOut();
 };
 var mostraPropagandas = function(event) {
   event.preventDefault();
-  $(".propaganda").show();
+  $(".propaganda").fadeIn();
 };
 var aposInicializacao = function() {
   $('.remove-item').click(removeitem);
