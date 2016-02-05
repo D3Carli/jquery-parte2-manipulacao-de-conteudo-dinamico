@@ -54,7 +54,7 @@ var aposInicializacao = function() {
       umaPropaganda().insertAfter($(this));
     });
   });
-  $('tr').hover(daDestaque, tiraDestaque);
+  $('tbody tr').hover(daDestaque, tiraDestaque);
   atualizaDados();
 };
 $(aposInicializacao);
