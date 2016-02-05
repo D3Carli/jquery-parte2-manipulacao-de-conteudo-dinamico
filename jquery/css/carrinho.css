@@ -73,3 +73,6 @@ input[type=button] {
 .hovering {
   background: #ccc;
 }
+#mostra-propagandas {
+  display: none;
+}

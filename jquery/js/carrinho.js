@@ -45,9 +45,10 @@ var daDestaque = function() {
 var tiraDestaque = function() {
   $(this).removeClass("hovering");
 };
-var alteraPropagandas = function() {
+var alternaPropaganda = function(event) {
   event.preventDefault();
-  $(".propaganda").toggle();
+  $(".propaganda").fadeToggle();
+  $(".alterna-propagandas").toggle();
 };
 var aposInicializacao = function() {
   $('.remove-item').click(removeitem);
@@ -59,8 +60,7 @@ var aposInicializacao = function() {
     });
   });
   $('tbody tr').hover(daDestaque, tiraDestaque);
-  $("#esconde-propagandas").click(alteraPropagandas);
-  $("#mostra-propagandas").click(alteraPropagandas);
+  $(".alterna-propagandas").click(alternaPropaganda);
   atualizaDados();
 };
 $(aposInicializacao);
