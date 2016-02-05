@@ -1,14 +1,18 @@
 var atualizaDados = function() {
-  var itens = $(".item-total:visible");
-  var total = 0;
-  var size = itens.length;
-  for (var i = 0, h; i < size; i++) {
-    var item = $(itens[i]);
-    var valor = parseFloat(item.text());
-    total += valor;
-  }
-  $(".valor-total").text(total);
-  $(".qtde-itens").text(size);
+  var carrinhos = $(".carrinho");
+  carrinhos.each(function() {
+    var carrinho = $(this);
+    var itens = carrinho.find(".item-total:visible");
+    var total = 0;
+    var size = itens.length;
+    for (var i = 0, h; i < size; i++) {
+      var item = $(itens[i]);
+      var valor = parseFloat(item.text());
+      total += valor;
+    }
+    carrinho.find(".valor-total").text(total);
+    carrinho.find(".qtde-itens").text(size);
+  });
 };
 var removeitem = function(event) {
   event.preventDefault();
