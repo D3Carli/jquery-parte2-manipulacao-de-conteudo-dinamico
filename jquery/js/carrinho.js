@@ -7,8 +7,8 @@ var umaPropaganda = function() {
   ];
   var posicao = Math.floor(propagandas.length * Math.random());
   var texto = propagandas[posicao];
-  var tr = $("<tr>").append($("<td>"));
-  tr.find("td").text(texto);
+  var tr = $("<tr>").addClass("propaganda").append($("<td>"));
+  tr.find("td").attr("colspan", 6).text(texto);
   return tr;
 };
 var atualizaDados = function() {
