@@ -40,7 +40,10 @@ var undo = function() {
   atualizaDados();
 };
 var daDestaque = function() {
-  $(this).css("background", "#CCC");
+  $(this).addClass("hovering");
+};
+var tiraDestaque = function() {
+  $(this).removeClass("hovering");
 };
 var aposInicializacao = function() {
   $('.remove-item').click(removeitem);
@@ -51,7 +54,7 @@ var aposInicializacao = function() {
       umaPropaganda().insertAfter($(this));
     });
   });
-  $('tr').hover(daDestaque);
+  $('tr').hover(daDestaque, tiraDestaque);
   atualizaDados();
 };
 $(aposInicializacao);

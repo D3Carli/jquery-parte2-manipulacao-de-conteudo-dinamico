@@ -70,3 +70,6 @@ input[type=button] {
 .recuperado {
   background: #FE0;
 }
+.hovering {
+  background: #ccc;
+}
